@@ -9,18 +9,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 </head>
+
 <body>
     <div class="container">
         <h2>Consultar um produto</h2>
         <p>Dados do produto</p><br>
 
-        <form name="produtoConsultar" action="/produto" method="get">
+        <form name="produtoConsultar" action="https://doacaodesangue.herokuapp.com/produto/consultar" method="get">
 
             <div class="form-group row">
                 <div class="col-xs-2">
                     <label for="tipo">ipo do produto: </label>
-                    <input class="form-control" id="tipo" type="text" name="tipo" readonly>               
+                    <input class="form-control" id="tipo" type="text" name="tipo" readonly>
                 </div>
             </div>
 
@@ -50,4 +52,5 @@
         </form>
     </div>
 </body>
+
 </html>

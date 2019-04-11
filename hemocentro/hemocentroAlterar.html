@@ -1,65 +1,74 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
+
 <head>
-  <title>Alterar</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Alterar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 
     <script>
-    function validateForm() {
-      if (document.forms[senha].value != documento.forms[confirmarSenha].value) {
-        alert("As senhas não são iguais.");
-        return false;
-      }
-  </script>
-  </head>
+        function validateForm() {
+            if (document.forms[senha].value != documento.forms[confirmarSenha].value) {
+                alert("As senhas não são iguais.");
+                return false;
+            }
+        }
+    </script>
+</head>
+
 <body>
-        <div class="container">
-            <h3>Alterar Hemocentro</h3><br>
-            <form name="hemocentroAlterar" action="/pessoa" onsubmit="return validateForm();" method = "post">
+    <div class="container">
+        <h3>Alterar Hemocentro</h3><br>
+        <form name="hemocentroAlterar" action="https://doacaodesangue.herokuapp.com/hemocentro/alterar" onsubmit="return validateForm();" method="post">
 
-                <div class="form-group row">
-                        <div class="col-xs-3">
-                            <label for="nome">Nome: </label>
-                            <input class="form-control" id="nome" type="text" name="nome" placeholder="Informe o nome">
-                        </div>
+            <div class="form-group row">
+                <div class="col-xs-6">
+                    <label for="nome">Nome: </label>
+                    <input class="form-control" id="nome" type="text" name="nome" placeholder="Informe o nome do hemocentro">
+                </div>
+            </div>
 
-                    <div class="form-group row">
-                        <div class="col-xs-3">
-                            <label for="cnpj">CNPJ: </label>
-                            <input class="form-control" id="cnpj" type="text" name="cnpj" placeholder="Informe o CNPJ">
-                        </div>
-						
-                        <div class="col-xs-3">
-                            <label for="telefone">Telefone: </label>
-                            <input class="form-control" id="telefone" type="text" name="telefone" placeholder="Informe o telefone">
-                        </div>
-                    </div>
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <label for="cnpj">CNPJ: </label>
+                    <input class="form-control" id="cnpj" type="text" name="cnpj" placeholder="Informe o CNPJ">
+                </div>
 
-                    <div class="form-group row">
-                        <div class="col-xs-6">
-                            <label for="endereco">Endereço: </label>
-                            <input class="form-control" id="endereco" type="text" name="endereco" placeholder="Informe o endereço">
-                        </div>
-                    </div>
+                <div class="col-xs-3">
+                    <label for="telefone">Telefone: </label>
+                    <input class="form-control" id="telefone" type="text" name="telefone"
+                        placeholder="Informe o telefone">
+                </div>
+            </div>
 
-                    <div class="form-group row">
-                        <div class="col-xs-3">
-                            <label for="senha">Senha: </label>
-                            <input class="form-control" id="senha" type="password" name="senha" placeholder="Insira a senha">
-                        </div>
-						
-                        <div class="col-xs-3">
-                            <label for="confirmarSenha">Confirmar senha: </label>
-                            <input class="form-control" id="confirmarSenha" type="password" name="confirmarSenha" placeholder="Insira a senha novamente">
-                        </div>
-                    </div>
-                <button type="submit" class="btn btn-primary">Alterar</button>
-            </form>
-        </div>
+            <div class="form-group row">
+                <div class="col-xs-6">
+                    <label for="endereco">Endereço: </label>
+                    <input class="form-control" id="endereco" type="text" name="endereco"
+                        placeholder="Informe o endereço">
+                </div>
+            </div>
 
-    </body>
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <label for="senha">Senha: </label>
+                    <input class="form-control" id="senha" type="password" name="senha" placeholder="Insira a senha">
+                </div>
+
+                <div class="col-xs-3">
+                    <label for="confirmarSenha">Confirmar senha: </label>
+                    <input class="form-control" id="confirmarSenha" type="password" name="confirmarSenha"
+                        placeholder="Insira a senha novamente">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Alterar</button>
+        </form>
+    </div>
+
+</body>
+
 </html>
