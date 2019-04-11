@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+        <div class="container">
+            <h3>Consultar Doação</h3><br>
+            <form name="doacaoConsultar" action="/doacao" method = "GET">
+
+                <div class="form-group">
+                    <label for="dateDoacao">Data da doação: </label>
+                    <input type="text" readonly class="form-control" id="dateDoacao" name="dateDoacao">
+                </div>
+                
+                <div class="form-group">
+                    <label for="qtdSangueDoado">Quantidade de sangue doado:</label>
+                    <input type="text" readonly class="form-control" id="qtdSangueDoado" name="qtdSangueDoado">
+                </div>
+
+                <div class="form-group">
+                    <label for="observacao">Observação:</label>
+                    <input type="text" readonly class="form-control" id="observacao" name="observacao">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Voltar</button>
+            </form>
+        </div>
+    
+    </body>   
+</html>

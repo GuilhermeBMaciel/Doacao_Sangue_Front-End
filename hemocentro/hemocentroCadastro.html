@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cadastro</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script>
+    function validateForm() {
+      var x = document.forms["hemocentroCadastro"]["email"].value;
+      var atpos = x.indexOf("@");
+      var dotpos = x.lastIndexOf(".");
+      if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+      }
+    }
+  </script>
+</head>
+
+
+<body>
+
+  <div class="container">
+    <h2>Cadastre um hemocentro</h2>
+    <p>Insira os dados para cadastrar o hemocentro.</p><br>
+
+    <form name="hemocentroCadastro" action="/hemocentro" onsubmit="return validateForm();" method="post">
+
+      <div class="form-group row">
+        <div class="col-xs-9">
+          <label for="nome">Nome do hemocentro: </label>
+          <input class="form-control" id="nome" type="text" name="nome" placeholder="Informe o nome do Hemocentro">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-xs-3">
+          <label for="cep">CEP: </label>
+          <input class="form-control" id="cep" type="text" name="cep">
+        </div>
+        <div class="col-xs-3">
+          <label for="cidade">Cidade: </label>
+          <input class="form-control" id="cidade" type="text" name="cidade">
+        </div>
+        <div class="col-xs-3">
+          <label for="bairro">Bairro: </label>
+          <input class="form-control" id="bairro" type="text" name="bairro">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-xs-7">
+          <label for="endereco">Endereço: </label>
+          <input class="form-control" id="endereco" type="text" name="endereco">
+        </div>
+        <div class="col-xs-2">
+          <label for="numero">Número: </label>
+          <input class="form-control" id="numero" type="text" name="numero">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-xs-3">
+          <label for="horarioAbertura">Horário de Abertura: </label>
+          <select class="form-control" id="horarioAbertura" name=horarioAbertura>
+            <option>06:00</option>
+            <option>07:00</option>
+            <option>08:00</option>
+            <option>09:00</option>
+          </select>
+        </div>
+        <div class="col-xs-3">
+            <label for="horarioEncerramento">Horário de Abertura: </label>
+            <select class="form-control" id="horarioEncerramento" name="horarioEncerramento">
+              <option>12:00</option>
+              <option>13:00</option>
+              <option>14:00</option>
+              <option>15:00</option>
+              <option>16:00</option>
+              <option>17:00</option>
+              <option>18:00</option>
+              <option>18:20</option>
+              <option>19:00</option>
+            </select>
+          </div>
+        <div class="col-xs-3">
+          <label for="telefone">Telefone: </label>
+          <input class="form-control" id="telefone" type="text" name="telefone">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-xs-6">
+          <label for="email">E-mail: </label>
+          <input class="form-control" id="email" type="text" name="email">
+        </div>
+        <div class="col-xs-3">
+            <label for="senha">Senha: </label>
+            <input class="form-control" id="senha" type="text" name="senha">
+          </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+  </div>
+
+
+</body>
+
+</html>

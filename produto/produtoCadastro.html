@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cadastro</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+    <div class="container">
+        <h2>Cadastre um produto</h2>
+        <p>Insira os dados para cadastrar um produto.</p><br>
+
+        <form name="produtoCadastro" action="/produto" method="post">
+
+            <div class="form-group row">
+                <div class="col-xs-2">
+                    <label for="tipo">Tipo do produto: </label>
+                    <select class="form-control" id="tipo" name="tipo">
+                        <option>Camisa</option>
+                        <option>Caneca</option>
+                        <option>Bottons</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-xs-5">
+                    <label for="nome">Nome do produto: </label>
+                    <input class="form-control" id="nome" type="text" name="nome" placeholder="Informe o nome do produto">
+                </div>
+                <div class="col-xs-2">
+                    <label for="id">Identificador: </label>
+                    <input class="form-control" id="id" type="number" name="id">
+                </div>
+                <div class="col-xs-2">
+                    <label for="quantidade">Quantidade: </label>
+                    <input class="form-control" id="quantidade" type="number" name="quantidade">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-xs-9">
+                    <label for="descricao">Descrição: </label>
+                    <textarea class="form-control" rows=2 id="descricao" name="descricao" placeholder="Descreva o produto em poucas palavras"></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>
