@@ -1,6 +1,7 @@
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Cadastrar confirmação de uma doação</title>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -10,7 +11,7 @@
 </head>
 <body>
         <div class="container">
-            <h3>Cadastrar confirmação da doação</h3><br>
+            <h3>Cadastrar confirmação de uma doação</h3><br>
             <p>Insira os dados para informar que uma pessoa realizou uma doação de sangue.</p><br>
             <form name="doacaoConsultar" action="https://doacaodesangue.herokuapp.com/doacao" method = "POST">
                
@@ -25,8 +26,8 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="qtdSangueDoado">Quantidade de sangue doado:</label>
-                    <input type="text" class="form-control" id="qtdSangueDoado" name="qtdSangueDoado" placeholder="Informe a quantida de sangue doado">
+                    <label for="qtdSangueDoado">Quantidade de sangue doado (ml):</label>
+                    <input type="text" class="form-control" id="qtdSangueDoado" name="qtdSangueDoado" placeholder="Informe a quantida de sangue doado em ml">
                 </div>
 
                 <div class="form-group">
