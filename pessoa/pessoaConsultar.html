@@ -10,22 +10,22 @@
 <body>
 
         <div class="container">
-            <h3>Consultar Pessoa</h3><br>
+            <h3>Dados Cadastrais</h3><br>
             <form name="pessoaConsultar" action="https://doacaodesangue.herokuapp.com/pessoa" method = "GET">
 
                 <div class="form-group row">
-                        <div class="col-xs-3">
+                        <div class="col-xs-4">
                             <label for="nome">Nome: </label>
                             <input class="form-control" id="nome" type="text" name="nome" readonly>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-xs-4">
                             <label for="sobrenome">Sobrenome: </label>
                             <input class="form-control" id="sobrenome" type="text" name="sobrenome" readonly>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <div class="col-xs-3">
+                        <div class="col-xs-5">
                             <label for="data">Data de Nascimento: </label>
                             <input class="form-control" id="data" type="text" name="data" readonly>
                         </div>
@@ -53,8 +53,13 @@
                         </div>
                     </div>
 
-                <button type="submit" class="btn btn-primary">Voltar</button>
-                <button type="submit" class="btn btn-primary">Alterar</button>
+                <div class="form-group row">
+                    <div class="col-xs-6">
+                            <button type="submit" class="btn btn-primary">Voltar</button>
+                            <button type="submit" class="btn btn-primary">Alterar Dados Cadastrais</button>
+                            <button type="submit" class="btn btn-primary">Alterar Senha</button>  
+                            <button type="submit" class="btn btn-primary">Excluir</button>
+                   </div>
             </form>
         </div>
 
