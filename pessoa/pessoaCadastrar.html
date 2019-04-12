@@ -1,165 +1,107 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Cadastro</title>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<head>
+  <title>Cadastro</title>
 
-    <script>
-      function validateForm() {
-        var x = document.forms["pessoaCadastro"]["email"].value;
-        var atpos = x.indexOf("@");
-        var dotpos = x.lastIndexOf(".");
-        if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
-          alert("Endereço de email inválido!");
-          return false;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-        // var w = document.forms["pessoaCadastro"]["senha"];
-        // var z = documento.forms["pessoaCadastro"]["confirmarSenha"];
-        // if (w != z) {
-        //   alert("As senhas não são iguais.");
-        //   return false;
-        // }
+  <script>
+    function validateForm() {
+      var x = document.forms["pessoaCadastro"]["email"].value;
+      var atpos = x.indexOf("@");
+      var dotpos = x.lastIndexOf(".");
+      if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+        alert("Endereço de email inválido!");
+        return false;
       }
-    </script>
-  </head>
+     //
+     // var w = document.forms["pessoaCadastro"]["senha"].value;
+     // var z = documento.forms["pessoaCadastro"]["confirmarSenha"].value;
+     // if (w != z) {
+     //  alert("As senhas não são iguais.");
+     //    return false;
+     // }
+      
+    }
+  </script>
+</head>
 
-  <body>
-    <div class="container">
-      <h2>Faça seu cadastro</h2>
-      <p>
-        Para comprar em nosso site é preciso realizar um cadastro. Através dele
-        você poderá acompanhar a entrega da sua compra.
-      </p>
-      <br />
+<body>
+  <div class="container">
+    <h2>Faça seu cadastro</h2>
+    <p>
+      Para comprar em nosso site é preciso realizar um cadastro. Através dele
+      você poderá acompanhar a entrega da sua compra.
+    </p>
+    <br />
 
-      <h4>Dados pessoais</h4>
-      <br />
+    <h4>Dados pessoais</h4>
+    <br />
 
-      <form
-        name="pessoaCadastro"
-        action="https://doacaodesangue.herokuapp.com/pessoa"
-        onsubmit="return validateForm();"
-        method="post"
-      >
-        <div class="form-group row">
-          <div class="col-xs-3">
-            <label for="nome">Nome: </label>
-            <input
-              class="form-control"
-              id="nome"
-              type="text"
-              name="nome"
-              placeholder="Informe seu nome"
-            />
-          </div>
-          <div class="col-xs-3">
-            <label for="sobrenome">Sobrenome: </label>
-            <input
-              class="form-control"
-              id="sobrenome"
-              type="text"
-              name="sobrenome"
-              placeholder="Informe seu sobrenome"
-            />
-          </div>
+    <form name="pessoaCadastro" action="https://doacaodesangue.herokuapp.com/pessoa" method="POST" onsubmit="return validateForm();" >
+      <div class="form-group row">
+        <div class="col-xs-3">
+          <label for="nome">Nome: </label>
+          <input class="form-control" id="nome" type="text" name="nome" placeholder="Informe seu nome" />
+        </div>
+        <div class="col-xs-3">
+          <label for="sobrenome">Sobrenome: </label>
+          <input class="form-control" id="sobrenome" type="text" name="sobrenome" placeholder="Informe seu sobrenome" />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-xs-3">
+          <label for="data">Data de Nascimento: </label>
+          <input class="form-control" id="data" type="DATE" name="datanascimento" placeholder="Informe sua data de nascimento" />
+        </div>
+        <div class="col-xs-3">
+          <label for="sexo">Sexo: </label>
+          <select class="form-control" id="sexo" name="sexo" placeholder="Selecione">
+            <option>F</option>
+            <option>M</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-xs-3">
+          <label for="cpf">CPF: </label>
+          <input class="form-control" id="cpf" type="text" name="cpf" placeholder="Informe seu cpf" />
+        </div>
+        <div class="col-xs-3">
+          <label for="telefone">Telefone: (somente números)</label>
+          <input class="form-control" id="telefone" type="text" name="telefone" placeholder="Informe seu telefone" />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-xs-6">
+          <label for="email">E-mail: </label>
+          <input class="form-control" id="email" type="text" name="email" placeholder="Informe seu e-mail" />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-xs-3">
+          <label for="senha">Senha: </label>
+          <input class="form-control" id="senha" type="text" name="senha" placeholder="Insira uma senha" />
         </div>
 
-        <div class="form-group row">
-          <div class="col-xs-3">
-            <label for="data">Data de Nascimento: </label>
-            <input
-              class="form-control"
-              id="data"
-              type="DATE"
-              name="datanascimento"
-              placeholder="Informe sua data de nascimento"
-            />
-          </div>
-          <div class="col-xs-3">
-            <label for="sexo">Sexo: </label>
-            <select
-              class="form-control"
-              id="sexo"
-              name="sexo"
-              placeholder="Selecione"
-            >
-              <option>F</option>
-              <option>M</option>
-            </select>
-          </div>
+        <div class="col-xs-3">
+          <label for="confirmarSenha">Confirmar senha: </label>
+          <input class="form-control" id="confirmarSenha" type="text" name="confirmarSenha" placeholder="Insira a senha novamente" />
         </div>
+      </div>
 
-        <div class="form-group row">
-          <div class="col-xs-3">
-            <label for="cpf">CPF: </label>
-            <input
-              class="form-control"
-              id="cpf"
-              type="text"
-              name="cpf"
-              placeholder="Informe seu cpf"
-            />
-          </div>
-          <div class="col-xs-3">
-            <label for="telefone">Telefone: (somente números)</label>
-            <input
-              class="form-control"
-              id="telefone"
-              type="text"
-              name="telefone"
-              placeholder="Informe seu telefone"
-            />
-          </div>
-        </div>
+      <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+  </div>
+</body>
 
-        <div class="form-group row">
-          <div class="col-xs-6">
-            <label for="email">E-mail: </label>
-            <input
-              class="form-control"
-              id="email"
-              type="text"
-              name="email"
-              placeholder="Informe seu e-mail"
-            />
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <div class="col-xs-3">
-            <label for="senha">Senha: </label>
-            <input
-              class="form-control"
-              id="senha"
-              type="text"
-              name="senha"
-              placeholder="Insira uma senha"
-            />
-          </div>
-          <!--
-          <div class="col-xs-3">
-            <label for="confirmarSenha">Confirmar senha: </label>
-            <input
-              class="form-control"
-              id="confirmarSenha"
-              type="text"
-              name="confirmarSenha"
-              placeholder="Insira a senha novamente"
-            />
-          </div>-->
-        </div>
-
-        <button type="submit" class="btn btn-primary">Entrar</button>
-      </form>
-    </div>
-  </body>
 </html>

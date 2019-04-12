@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+        <div class="container">
+            <h3>Alterar Senha</h3><br>
+            <form name="pessoaAlterarSenha" action="/pessoa" method = "post">
+
+                    <div class="form-group row">
+                        <label for="senha">Nova senha: </label>
+                        <input class="form-control" id="senha" type="password">
+
+                        <label for="confirmarSenha">Confirmar nova senha: </label>
+                        <input class="form-control" id="confirmarSenha" type="password">
+                        </div>
+                    </div>
+                    
+                <button type="submit" onsubmit="" class="btn btn-primary">Voltar</button>
+                <button type="submit" onsubmit="" class="btn btn-primary">Alterar</button>
+            </form>
+        </div>
+        
+    </body>   
+</html>
