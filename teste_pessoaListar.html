@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myApp" ng-controller="userCtrl">
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+var url = "myTutorials.txt";
+var user;
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    user = JSON.parse(this.responseText);
+  }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+</script>
+
+<div class="w3-container">
+
+<h3>Usuários</h3>
+
+<table class="w3-table w3-bordered w3-striped">
+  <tr>
+    <th>Editar</th>
+    <th>Nome</th>
+    <th>Sobrenome</th>
+  </tr>
+  <tr ng-repeat="user in users">
+    <td>
+      <button class="w3-btn w3-ripple" ng-click="editUser(user.id)">&#9998; Edit</button>
+    </td>
+    <td>{{ user.nome }}</td>
+    <td>{{ user.sobrenome }}</td>
+  </tr>
+</table>
+<br>
+<button class="w3-btn w3-green w3-ripple" ng-click="editUser('new')">&#9998; Create New User</button>
+
+</div>
+
+</body>
+</html>
