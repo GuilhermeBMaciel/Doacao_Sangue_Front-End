@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cadastro</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Seja um doador</h2>
+        <p>
+            Para se tornar um doador precisamos saber seu tipo sanguíneo e como está sua saúde.
+        </p>
+        <br />
+
+        <h4>Situação de saúde</h4>
+        <br />
+
+        <form name="doadorCadastrar" action="https://doacaodesangue.herokuapp.com/doador" method="POST"
+            onsubmit="return validateForm();">
+            <div class="form-group row">
+                <div class="col-xs-2">
+                    <label for="tipoSanguineo">Tipo Sanguineo: </label>
+                    <select class="form-control" id="tipoSanguineo" name="tipoSanguineo" placeholder="Selecione">
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                    </select>
+                </div>
+
+                <div class="col-xs-4">
+                    <label for="transfusao">Já fez transfusão de sangue? </label>
+                    <select class="form-control" id="transfusao" name="transfusao" placeholder="Selecione">
+                        <option>Sim</option>
+                        <option>Não</option>
+                    </select>
+                </div>
+                
+                <div class="col-xs-4">
+                    <label for="tempoTransfusao">Caso tenha feito, já tem quanto tempo?</label>
+                    <select class="form-control" id="tempoTransfusao" name="tempoTransfusao" placeholder="Selecione">
+                        <option>Não fiz</option>
+                        <option>Menos de 1 ano</option>
+                        <option>Mais de 1 ano</option>
+                    </select>
+                </div>
+                
+            </div>
+
+            <div class="form-group row">
+                
+                <div class="col-xs-2">
+                    <label for="malaria">Já contraiu Malaria? </label>
+                    <select class="form-control" id="malaria" name="malaria" placeholder="Selecione">
+                        <option>Sim</option>
+                        <option>Não</option>
+                    </select>
+                </div>
+
+                <div class="col-xs-4">
+                    <label for="hepatite">Contraiu Hepatites B e C depois dos 11 anos? </label>
+                    <select class="form-control" id="hepatite" name="hepatite" placeholder="Selecione">
+                        <option>Sim</option>
+                        <option>Não</option>
+                    </select>
+                </div>
+
+                <div class="col-xs-4">
+                    <label for="drogaIlicita">Já fez uso de drogas ilícitas injetáveis? </label>
+                    <select class="form-control" id="drogaIlicita" name="drogaIlicita" placeholder="Selecione">
+                        <option>Sim</option>
+                        <option>Não</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+    </div>
+</body>
+
+</html>

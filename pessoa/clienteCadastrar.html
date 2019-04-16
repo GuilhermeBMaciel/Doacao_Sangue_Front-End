@@ -12,7 +12,7 @@
 
   <script>
     function validateForm() {
-      var x = document.forms["pessoaCadastro"]["email"].value;
+      var x = document.forms["clienteCadastrar"]["email"].value;
       var atpos = x.indexOf("@");
       var dotpos = x.lastIndexOf(".");
       if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
@@ -43,7 +43,7 @@
     <h4>Dados pessoais</h4>
     <br />
 
-    <form name="pessoaCadastro" action="https://doacaodesangue.herokuapp.com/pessoa" method="POST" onsubmit="return validateForm();" >
+    <form name="clienteCadastrar" action="https://doacaodesangue.herokuapp.com/cliente" method="POST" onsubmit="return validateForm();" >
       <div class="form-group row">
         <div class="col-xs-3">
           <label for="nome">Nome: </label>
@@ -98,8 +98,8 @@
           <input class="form-control" id="confirmarSenha" type="text" name="confirmarSenha" placeholder="Insira a senha novamente" />
         </div>
       </div>
-
-      <button type="submit" class="btn btn-primary">Entrar</button>
+      <button type="submit" class="btn btn-primary">Voltar</button>
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
   </div>
 </body>

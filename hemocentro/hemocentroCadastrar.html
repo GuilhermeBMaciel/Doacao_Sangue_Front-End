@@ -1,110 +1,106 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Cadastrar</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    <script>
-      function validateForm() {
-        if (
-          document.forms["senha"].value !=
-          documento.forms["confirmarSenha"].value
-        ) {
-          alert("As senhas não são iguais.");
-          return false;
-        }
+<head>
+  <title>Cadastrar</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script>
+    function validateForm() {
+      if (
+        document.forms["senha"].value !=
+        documento.forms["confirmarSenha"].value
+      ) {
+        alert("As senhas não são iguais.");
+        return false;
       }
-    </script>
-  </head>
+    }
+  </script>
+</head>
 
-  <body>
-    <div class="container">
-      <h3>Cadastrar Hemocentro</h3>
-      <br />
-      <form name="hemocentroCadastrar" action="https://doacaodesangue.herokuapp.com/hemocentro" onsubmit="return validateForm();" method="POST">
-        <div class="form-group row">
-          <div class="col-xs-6">
-            <label for="nome">Nome: </label>
-            <input
-              class="form-control"
-              id="nome"
-              type="text"
-              name="nome"
-              placeholder="Informe o nome do hemocentro"
-            />
-          </div>
+<body>
+  <div class="container">
+    <h3>Cadastrar Hemocentro</h3>
+    <br />
+    <form name="hemocentroCadastrar" action="https://doacaodesangue.herokuapp.com/hemocentro"
+      onsubmit="return validateForm();" method="POST">
+      <div class="form-group row">
+        <div class="col-xs-5">
+          <label for="nome">Nome: </label>
+          <input class="form-control" id="nome" type="text" name="nome" placeholder="Informe o nome do hemocentro" />
         </div>
 
-        <div class="form-group row">
-          <div class="col-xs-3">
-            <label for="cnpj">CNPJ: </label>
-            <input
-              class="form-control"
-              id="cnpj"
-              type="text"
-              name="cnpj"
-              placeholder="Informe o CNPJ"
-            />
-          </div>
+        <div class="col-xs-3">
+          <label for="cnpj">CNES: </label>
+          <input class="form-control" id="cnpj" type="text" name="cnpj" placeholder="Informe o CNPJ" />
+        </div>
+      </div>
 
-          <div class="col-xs-3">
-            <label for="telefone">Telefone: </label>
-            <input
-              class="form-control"
-              id="telefone"
-              type="text"
-              name="telefone"
-              placeholder="Informe o telefone"
-            />
-          </div>
+
+      <div class="form-group row">
+        <div class="col-xs-2">
+          <label for="cep">CEP: </label>
+          <input class="form-control" id="cep" type="text" name="cep" placeholder="Informe o cep" />
         </div>
 
-        <div class="form-group row">
-          <div class="col-xs-3">
-            <label for="cep">CEP: </label>
-            <input
-              class="form-control"
-              id="cep"
-              type="text"
-              name="cep"
-              placeholder="Informe o cep"
-            />
-          </div>
+        <div class="col-xs-3">
+          <label for="cidade">Cidade: </label>
+          <input class="form-control" id="cidade" type="text" name="cidade" placeholder="Informe a cidade" />
         </div>
 
-        <div class="form-group row">
-          <div class="col-xs-3">
-            <label for="senha">Senha: </label>
-            <input
-              class="form-control"
-              id="senha"
-              type="password"
-              name="senha"
-              placeholder="Insira a senha"
-            />
-          </div>
-          <!--
-          <div class="col-xs-3">
-            <label for="confirmarSenha">Confirmar senha: </label>
-            <input
-              class="form-control"
-              id="confirmarSenha"
-              type="password"
-              name="confirmarSenha"
-              placeholder="Insira a senha novamente"
-            />
-          </div>
-          -->
+        <div class="col-xs-3">
+          <label for="bairro">Bairro: </label>
+          <input class="form-control" id="bairro" type="text" name="bairro" placeholder="Informe o bairro" />
         </div>
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
-      </form>
-    </div>
-  </body>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-xs-5">
+          <label for="endereco">Endereço: </label>
+          <input class="form-control" id="endereco" type="text" name="endereco" placeholder="Informe o endereço" />
+        </div>
+
+        <div class="col-xs-3">
+          <label for="numero">Número: </label>
+          <input class="form-control" id="numero" type="text" name="numero" placeholder="Informe o número" />
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <div class="col-xs-5">
+          <label for="email">E-mail: </label>
+          <input class="form-control" id="email" type="text" name="email" placeholder="Insira um e-mail" />
+        </div>
+        <div class="col-xs-3">
+          <label for="telefone">Telefone: </label>
+          <input class="form-control" id="telefone" type="text" name="telefone" placeholder="Informe o telefone" />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-xs-4">
+          <label for="senha">Senha: </label>
+          <input class="form-control" id="senha" type="password" name="senha" placeholder="Insira a senha" />
+        </div>
+        <div class="col-xs-4">
+          <label for="confirmarSenha">Confirmar senha: </label>
+          <input class="form-control" id="confirmarSenha" type="password" name="confirmarSenha"
+            placeholder="Insira a senha novamente" />
+        </div>
+      </div>
+      
+      <Br>
+      INSERIR HORÁRIO DE FUNCIONAMENTO <BR>
+      <br>
+
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+  </div>
+</body>
+
 </html>
