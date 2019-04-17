@@ -1,0 +1,5 @@
+[
+{"id":1,"nome":"Compartilhando sangue bom","quantidade":30,"descricao":"","material:"Porcelana","volume":300,"valor":30,"tipo":"Caneca"},
+{"id":2,"nome":"Camisa 'Sou doador'","quantidade":40,"descricao":"","tamanho":"P","material":"Algodão","genero":"feminino","valor":20,tipo":"Camisa"},
+{"id":3,"nome":"Doe vida","quantidade":10,"descricao":"","tamanho":3.5,"valor":10,"tipo":"Boton"}
+]

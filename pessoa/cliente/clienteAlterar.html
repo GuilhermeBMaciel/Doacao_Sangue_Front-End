@@ -12,15 +12,15 @@
 
     <script>
         function validateForm() {
-            var x = document.forms["pessoaAlterar"]["email"].value;
+            var x = document.forms["clienteAlterar"]["email"].value;
             var atpos = x.indexOf("@");
             var dotpos = x.lastIndexOf(".");
             if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
                 alert("E-mail inválido.");
                 return false;
             }
-            var x = document.forms["pessoaAlterar"]["senha"].value;
-            var y = document.forms["pessoaAlterar"]["confirmarSenha"].value
+            var x = document.forms["clienteAlterar"]["senha"].value;
+            var y = document.forms["clienteAlterar"]["confirmarSenha"].value
             if (x != confirmarSenha) {
                 alert("As senhas inseridas não são iguais.");
                 return false;
@@ -37,7 +37,7 @@
     <div class="container">
         <h1>Alterar dados cadastrais</h1> <br>
         
-        <form name="pessoaAlterar" action="https://doacaodesangue.herokuapp.com/pessoa" onsubmit="return validateForm();" method="PUT">
+        <form name="clienteAlterar" action="https://doacaodesangue.herokuapp.com/cliente" onsubmit="return validateForm();" method="PUT">
 
             <div class="form-group row">
                 <div class="col-xs-3">
