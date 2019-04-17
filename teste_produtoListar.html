@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myApp" ng-controller="userCtrl">
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+var url = "https://doacaodesangue.herokuapp.com/produto";
+var produtos;
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    produtos = JSON.parse(this.responseText);
+  }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+</script>
+
+<div class="w3-container">
+
+<h3>Produtos</h3>
+
+<table class="w3-table w3-bordered w3-striped">
+  <tr>
+    <th>Editar</th>
+    <th>Nome</th>
+    <th>Valor</th>
+  </tr>
+  <tr ng-repeat="user in users">
+    <td>
+      <button class="w3-btn w3-ripple" onclick="return alterar();" ng-click="alterar(produto.id)">&#9998; Alterar</button>
+    </td>
+    <td>{{ produto.nome }}</td>
+    <td>{{ produto.valor }}</td>
+  </tr>
+</table>
+<br>
+<button class="w3-btn w3-green w3-ripple" onclick="return cadastrar();" ng-click="cadastrar('new')">&#9998; Criar novo Produto</button>
+
+</div>
+<script>
+    function alterar()
+          {
+              window.location.href = 'produtoAlterar.html';
+          }
+
+  function cadastrar()
+          {
+              window.location.href = 'produtoCadastrar.html';
+          }
+  </script>
+</body>
+</html>
