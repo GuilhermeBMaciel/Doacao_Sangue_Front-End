@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body onload="loadDoc()">
+
+<h1>The XMLHttpRequest Object</h1>
+<table id="demo"></table>
+
+
+<script>
+function httpGetAsync(callback)
+{
+    var app = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() {
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", https://doacaodesangue.herokuapp.com/produto, true);
+    xmlHttp.send(null);
+}
+</script>
+
+<div ng-app="listarProdutos" ng-controller="httpGetAsync">
+
+<h3>Produtos</h3>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xhttp.open("GET", "https://doacaodesangue.herokuapp.com/produto", true);
+  xhttp.send();
+}
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>Artist</th><th>Title</th></tr>";
+  var x = xmlDoc.getElementsByTagName("CD");
+  for (i = 0; i <x.length; i++) {
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("nome")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("valor")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+
+<script>
+    function alterar()
+          {
+              window.location.href = 'produtoAlterar.html';
+          }
+
+  function cadastrar()
+          {
+              window.location.href = 'produtoCadastrar.html';
+          }
+  </script>
+</body>
+</html>
