@@ -2,56 +2,117 @@
 <html>
 
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+  <script>  
+    $(document).ready(function () {
+
+      $("input.todos").click(function () {
+        $("p.1").empty();
+        $.getJSON("https://doacaodesangue.herokuapp.com/produto", function (
+          produtos
+        ) {
+          $.each(produtos, function (i, field) {
+            $("p.1").append(
+              produtos[i].categoria +
+              " | " +
+              produtos[i].nome +
+              " | " +
+              produtos[i].valorunitario +
+              "<br>"
+            );
+          });
+        });
+      });
+
+      $("input.camisas").click(function () {
+        $("p.2").empty();
+        $.getJSON("https://doacaodesangue.herokuapp.com/camisas", function (
+          camisas
+        ) {
+          $.each(camisas, function (i, field) {
+            $("p.2").append(
+              camisas[i].categoria +
+              " | " +
+              camisas[i].nome +
+              " | " +
+              camisas[i].valorunitario +
+              "<br>"
+            );
+          });
+        });
+      });
+
+      $("input.canecas").click(function () {
+        $("p.3").empty();
+        $.getJSON("https://doacaodesangue.herokuapp.com/canecas", function (
+          canecas
+        ) {
+          $.each(canecas, function (i, field) {
+            $("p.3").append(
+              canecas[i].categoria +
+              " | " +
+              canecas[i].nome +
+              " | " +
+              canecas[i].valorunitario +
+              "<br>"
+            );
+          });
+        });
+      });
+
+      $("input.bottons").click(function () {
+        $("p.4").empty();
+        $.getJSON("https://doacaodesangue.herokuapp.com/bottons", function (
+          bottons
+        ) {
+          $.each(bottons, function (i, field) {
+            $("p.4").append(
+              bottons[i].categoria +
+              " | " +
+              bottons[i].nome +
+              " | " +
+              bottons[i].valorunitario +
+              "<br>"
+            );
+          });
+        });
+      });
+
+    });
+  </script>
 </head>
 
 <body ng-app="">
+  <h2>Catalogo de Produtos</h2>
 
+  <from>
+    Filtro:
+    <input type="radio" ng-model="filtroProdutos" class="todos" value="todos" />Todos os produtos
+    <input type="radio" ng-model="filtroProdutos" class="camisas" value="camisas" />Camisas
+    <input type="radio" ng-model="filtroProdutos" class="canecas" value="canecas" />Canecas
+    <input type="radio" ng-model="filtroProdutos" class="bottons" value="bottons" />Bottons <br /><br />
+  </from>
 
-    <h2>Catalogo de Produtos</h2>
-
-    <from>
-        Filtro:
-        <input type="radio" ng-model="filtroProdutos" value="camisas">Camisas
-        <input type="radio" ng-model="filtroProdutos" value="canecas">Canecas
-        <input type="radio" ng-model="filtroProdutos" value="bottons">Bottons
-        <br><br>
-    </from>
-
-    <div ng-switch="filtroProdutos">
-        <div ng-switch-when="camisas">
-            Apenas camisas
-        </div>
-        <div ng-switch-when="canecas">
-            Apenas canecas
-        </div>
-        <div ng-switch-when="bottons">
-            Apenas Bottons
-        </div>
+  <div ng-switch="filtroProdutos">
+    <div ng-switch-when="todos">
+      Nossos produtos
+      <p class="1"></p>
     </div>
-    
-    <script>
-        $(document).ready(function () {
-            $.getJSON("https://doacaodesangue.herokuapp.com/produto", function (
-                produtos
-            ) {
-                $.each(produtos, function (i, field) {
-                    $("div").append(
-                        produtos[i].categoria +
-                        " | " +
-                        produtos[i].nome +
-                        " | " +
-                        produtos[i].valorunitario +
-                        "<br>"
-                    );
-                });
-            });
-        });
-    </script>
-
-
-
+    <div ng-switch-when="camisas">
+      Nossas camisas
+      <p class="2"></p>
+    </div>
+    <div ng-switch-when="canecas">
+      Nossas canecas
+      <p class="3"></p>
+    </div>
+    <div ng-switch-when="bottons">
+      Nossos Bottons
+      <p class="4"></p>
+    </div>
+  </div>
 </body>
 
 </html>
