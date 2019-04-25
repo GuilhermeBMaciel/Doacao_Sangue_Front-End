@@ -1,36 +1,100 @@
 <!DOCTYPE html>
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {box-sizing: border-box;}
 
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: black;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding:7px;
+  margin-top: 6px;
+  font-size: 18px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+</style>
+</head>
 <body>
 
-    <div ng-app="myApp" ng-controller="produtosCtrl">
+<div class="topnav">
+  <a class="active" href="#home">Busca de Produto</a>
 
-        <p>Digite sua busca:</p>
+  <div class="search-container">
+    <form action="https://doacaodesangue.herokuapp.com/produto/busca/">
+      <input type="text" placeholder="Search.." name="">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
 
-        <p><input type="text" ng-model="test"></p>
+<div style="padding-left:16px">
 
-        <ul>
-            <li ng-repeat="x in produtos | filter:test">
-                {{ x }}
-            </li>
-        </ul>
-
-    </div>
-
-    <script>
-        angular.module('myApp', []).controller('produtosCtrl', function ($scope) {
-            $scope.produtos = [
-                { "id": 2, "nome": "Compartilhando sangue bom", "quantidade": 30, "descricao": "", "valorunitario": 19.9, "categoria": "Camisa", "tamanho": "P", "volume": "Não Possui", "material": "Algodão", "genero": "Masculino" },
-                { "id": 1, "nome": "Sou um herói!", "quantidade": 10, "descricao": "T-shirt", "valorunitario": 15.5, "categoria": "Camisa", "tamanho": "GG", "volume": "Não Possui", "material": "Malha", "genero": "Feminino" },
-                { "id": 3, "nome": "Sangue bom", "quantidade": 40, "descricao": "", "valorunitario": 29.9, "categoria": "Caneca", "tamanho": "Não especificado", "volume": "300", "material": "Porcelana", "genero": "Unissex" },
-                { "id": 4, "nome": "Doe sangue, deo vida!", "quantidade": 40, "descricao": "", "valorunitario": 29.9, "categoria": "Botton", "tamanho": "M", "volume": "Não Possui", "material": "Plastico", "genero": "Unissex" }
-            ];
-        });
-    </script>
-
-
+</div>
 
 </body>
-
 </html>
