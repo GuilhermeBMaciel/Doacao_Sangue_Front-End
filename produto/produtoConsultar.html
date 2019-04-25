@@ -5,7 +5,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
-  <script>  
+  <script>
     $(document).ready(function () {
 
       $("input.todos").click(function () {
@@ -38,6 +38,12 @@
               camisas[i].nome +
               " | " +
               camisas[i].valorunitario +
+              " | " +
+              camisas[i].tamanho +
+              " | " +
+              camisas[i].material +
+              " | " +
+              camisas[i].genero +
               "<br>"
             );
           });
@@ -56,6 +62,12 @@
               canecas[i].nome +
               " | " +
               canecas[i].valorunitario +
+              " | " +
+              canecas[i].tamanho +
+              " | " +
+              canecas[i].material +
+              " | " +
+              canecas[i].volume +
               "<br>"
             );
           });
@@ -74,6 +86,8 @@
               bottons[i].nome +
               " | " +
               bottons[i].valorunitario +
+              " | " +
+              bottons[i].material +
               "<br>"
             );
           });
@@ -97,19 +111,27 @@
 
   <div ng-switch="filtroProdutos">
     <div ng-switch-when="todos">
-      Nossos produtos
+      <u>Nossos produtos</u>
+      <br><br>
+      <b>Categoria | Nome | Valor</b>
       <p class="1"></p>
     </div>
     <div ng-switch-when="camisas">
-      Nossas camisas
+      <u>Nossas camisas</u>
+      <br><br>
+      <b>Categoria | Nome | Valor | Tamanho | Material | Genero</b>
       <p class="2"></p>
     </div>
     <div ng-switch-when="canecas">
-      Nossas canecas
+      <u>Nossas canecas</u>
+      <br><br>
+      <b>Categoria | Nome | Valor | Tamanho | Material | Volume</b>
       <p class="3"></p>
     </div>
     <div ng-switch-when="bottons">
-      Nossos Bottons
+      <u>Nossos Bottons</u>
+      <br><br>
+      <b>Categoria | Nome | Valor | Material</b>
       <p class="4"></p>
     </div>
   </div>
