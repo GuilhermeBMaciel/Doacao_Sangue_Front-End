@@ -84,10 +84,10 @@ body {
 <div class="topnav">
   <a class="active" href="#home">Busca de Produto</a>
 
-  <div class="search-container" method="post">
-    <form action="https://doacaodesangue.herokuapp.com/produto/">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
+  <div class="search-container" >
+    <form name="produtoBusca" action="http://localhost:3000/produto/busca/teste/" method="GET">
+      <input type="text" placeholder="Search.." name="nome">
+      <button type="submit"></button>
     </form>
   </div>
 </div>
