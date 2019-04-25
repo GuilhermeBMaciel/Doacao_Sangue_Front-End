@@ -1,48 +1,35 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-
-    <script>
-        document.getElementById("filter").on("keyup", function() {
-            $.getJSON("https://doacaodesangue.herokuapp.com/produto", function (
-                busca
-            ) {
-            
-            var result = json.filter(function (item) {
-                return item.nome == query.value;
-            });
-        };
-        };
-
-        $("input.todos").click(function () {
-        $("p.1").empty();
-        $.getJSON("https://doacaodesangue.herokuapp.com/produto", function (
-          produtos
-        ) {
-          $.each(produtos, function (i, field) {
-            $("p.1").append(
-              produtos[i].categoria +
-              " | " +
-              produtos[i].nome +
-              " | " +
-              produtos[i].valorunitario +
-              "<br>"
-            );
-          });
-        });
-      });
-    </script>
-
-</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
 <body>
 
-    <h2>Filter Anything</h2>
-    <p>Type something in the input field to search for a specific text inside the div element with id="myDIV":</p>
-    <input id="myInput" type="text" placeholder="Search..">
+    <div ng-app="myApp" ng-controller="produtosCtrl">
+
+        <p>Digite sua busca:</p>
+
+        <p><input type="text" ng-model="test"></p>
+
+        <ul>
+            <li ng-repeat="x in produtos | filter:test">
+                {{ x }}
+            </li>
+        </ul>
+
+    </div>
+
+    <script>
+        angular.module('myApp', []).controller('produtosCtrl', function ($scope) {
+            $scope.produtos = [
+                { "id": 2, "nome": "Compartilhando sangue bom", "quantidade": 30, "descricao": "", "valorunitario": 19.9, "categoria": "Camisa", "tamanho": "P", "volume": "Não Possui", "material": "Algodão", "genero": "Masculino" },
+                { "id": 1, "nome": "Sou um herói!", "quantidade": 10, "descricao": "T-shirt", "valorunitario": 15.5, "categoria": "Camisa", "tamanho": "GG", "volume": "Não Possui", "material": "Malha", "genero": "Feminino" },
+                { "id": 3, "nome": "Sangue bom", "quantidade": 40, "descricao": "", "valorunitario": 29.9, "categoria": "Caneca", "tamanho": "Não especificado", "volume": "300", "material": "Porcelana", "genero": "Unissex" },
+                { "id": 4, "nome": "Doe sangue, deo vida!", "quantidade": 40, "descricao": "", "valorunitario": 29.9, "categoria": "Botton", "tamanho": "M", "volume": "Não Possui", "material": "Plastico", "genero": "Unissex" }
+            ];
+        });
+    </script>
+
+
 
 </body>
 
